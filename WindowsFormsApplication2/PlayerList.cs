@@ -25,6 +25,10 @@
  * Author :         Chris Kane and Nick Bruno
  * Description :    A class for a node in the linked list class
  */
+
+using System;
+using System.Windows.Forms;
+
 namespace matchingGame
 {
     class PlayerList
@@ -51,9 +55,9 @@ namespace matchingGame
         { return playerListNode.changeToNext(); }
 
         //Store all the players in a string
-        public string printAll(bool includeCurrentPlayer)
+        public String printAll(bool includeCurrentPlayer)
         {
-            string stringy = "";
+            String stringy = "";
 
             Player current;
 
@@ -76,18 +80,22 @@ namespace matchingGame
             return stringy;
         }
 
-        public string printCurrent()
+        public String printCurrent()
         {
             return getCurrentPlayer().getPlayerName() + " has " +
                 getCurrentPlayer().getPlayerScore() + " points.\n";
         }
 
+
         public string getPlayerName()
         { return playerListNode.getCurrent().getPlayerName(); }
+
         public int getPlayerScore()
         { return playerListNode.getCurrent().getPlayerScore(); }
+
         public void incrementPlayerScore()
         { playerListNode.getCurrent().incrementPlayerScore(); }
+
         public Player getCurrentPlayer()
         { return playerListNode.getCurrent(); }
     }
@@ -95,7 +103,7 @@ namespace matchingGame
     class Player
     {
         private int score;
-        private string name;
+        private String name;
 
         public Player(string name)
         {
@@ -105,8 +113,11 @@ namespace matchingGame
 
         public string getPlayerName()
         { return name; }
+
+
         public int getPlayerScore()
         { return score; }
+
         public void incrementPlayerScore()
         { score++; }
     }
@@ -145,7 +156,8 @@ namespace matchingGame
         {
             if (iterator.getNext() == null)
                 iterator = head;
-            else iterator = iterator.getNext();
+            else
+                iterator = iterator.getNext();
             return iterator.getData();
         }
 
@@ -154,7 +166,8 @@ namespace matchingGame
         {
             if (iterator.getNext() != null)
                 return iterator.getNext().getData();
-            else return head.getData();
+            else
+                return head.getData();
         }
 
         public int getCount()

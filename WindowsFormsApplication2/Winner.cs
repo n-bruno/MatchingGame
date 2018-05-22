@@ -37,8 +37,14 @@ namespace WindowsFormsApplication2
             int size = 0;
             for (int i = 0; i < numOfPlayers; i++)
             {
-                if (!(playerList.getPlayerScore() >= highestScore))
+                if (playerList.getPlayerScore() < highestScore)
                 {
+                    //no code here, move on
+                    //we aren't concerned about a loser
+                }
+                else //when the player's score is equal or greater than highestScore
+                {
+                    
                     if (playerList.getPlayerScore() > highestScore) //greater than highest score?
                     {
                         //get rid of the previous found highest score player(s)

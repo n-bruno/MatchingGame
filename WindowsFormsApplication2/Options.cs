@@ -38,29 +38,38 @@ namespace matchingGame
         private void go_button_Click(object sender, EventArgs e)
         {
             if (textBox_player_names.Text != "")
+            {
                 if (textBox_cardx.Text != "" && textBox_cardy.Text != "")
                 {
                     int x = int.Parse(textBox_cardx.Text),
                         y = int.Parse(textBox_cardy.Text);
 
                     if ((x >= 2 && y >= 2) && (x <= 7 && y <= 7))
-
+                    {
                         if ((x % 2 == 0 || y % 2 == 0) || (x % 2 == 0 && y % 2 == 0))
                         {
                             textBox_player_names.Text = textBox_player_names.Text.Replace("  ", " ");
-                            string[] players = textBox_player_names.Text.Split(' ');
+
+                            String[] players = textBox_player_names.Text.Split(' ');
+
                             if (players.Length < 8)
                             {
                                 bool pass = true;
 
-                                for (int i = 0; pass && i < players.Length; i++)
-                                    for (int j = 0; pass && j < players.Length; j++)
+                                int i = 0;
+                                while (pass && i < players.Length)
+                                {
+                                    int j = 0;
+                                    while (pass && j < players.Length)
                                     {
                                         if (i != j && players[i] == players[j])
                                             pass = false;
                                         if (players[i].Equals("") || players[i].Equals(" "))
                                             pass = false;
+                                        j++;
                                     }
+                                    i++;
+                                }
 
                                 if (pass)
                                 {
@@ -70,15 +79,23 @@ namespace matchingGame
                                     frm.Show();
                                     Visible = false;
                                 }
-                                else MessageBox.Show("Two players can't have the same names. They also can't be blank.", "Error");
+                                else
+                                    MessageBox.Show("Two players can't have the same names. They also can't be blank.", "Error");
                             }
-                            else MessageBox.Show("Whoa, you have too many players. 7 at max.", "Error");
+                            else
+                                MessageBox.Show("Whoa, you have too many players. 7 at max.", "Error");
                         }
-                        else MessageBox.Show("Both numbers can't be odd.", "Error");
-                    else MessageBox.Show("Dimensions must be greater than 1 and less than 8.", "Error");
+                        else
+                            MessageBox.Show("Both numbers can't be odd.", "Error");
+                    }
+                    else
+                        MessageBox.Show("Dimensions must be greater than 1 and less than 8.", "Error");
                 }
-                else MessageBox.Show("Dimensions fields cannot be blank.", "Error");
-            else MessageBox.Show("You need to have at least one player to play.", "Error");
+                else
+                    MessageBox.Show("Dimensions fields cannot be blank.", "Error");
+            }
+            else
+                MessageBox.Show("You need to have at least one player to play.", "Error");
         }
 
         //source: http://stackoverflow.com/questions/1669318/override-standard-close-x-button-in-a-windows-form
@@ -88,7 +105,8 @@ namespace matchingGame
             musicOn = !musicOn;
             if (musicOn)
                 play.play();
-            else play.stop();
+            else
+                play.stop();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -103,10 +121,10 @@ namespace matchingGame
         }
 
         private void Form_Options_Load(object sender, EventArgs e)
-        { form = (Form)sender; }
+        { this.form = (Form)sender; }
 
         private void Form_Close(object sender, EventArgs e)
-        { form = (Form)sender; }
+        { this.form = (Form)sender; }
 
         /*
          * A class to play those rad tunes!
@@ -117,7 +135,7 @@ namespace matchingGame
 
             public void play()
             {
-                string st = Directory.GetCurrentDirectory();
+                String st = Directory.GetCurrentDirectory();
 
                 st = st.Substring(0, st.IndexOf("\\bin\\"));
 

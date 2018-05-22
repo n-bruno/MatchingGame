@@ -4,6 +4,7 @@
  * Author :         Chris Kane and Nick Bruno
  * Description :    An internal representation of the card pile
  */
+
 using System;
 using System.Windows.Forms;
 
@@ -23,8 +24,10 @@ namespace WindowsFormsApplication2
 
             int k = 0;
             for (int i = 0; i < width; i++)
+            {
                 for (int j = 0; j < height; j++)
                     internalPile[i, j] = RNGarray[k++];
+            }
         }
 
         public bool checkMatch(int firstCardX, int firstCardY, int secondCardX, int secondCardY)
@@ -43,6 +46,7 @@ namespace WindowsFormsApplication2
 
             //loop for each possible number
             for (int i = 0; i <= possibleNumbers; i++)
+            {
                 for (int j = 0; j < 2; j++) //add two instances of a number
                 {
                     //randomly generated index
@@ -59,16 +63,21 @@ namespace WindowsFormsApplication2
                         //if index has a value, move to the next index
                         else if (random < array.Length - 1)
                             random++;
-                        else random = 0;
+                        else
+                            random = 0;
                         //if reached end of array, go to index 0
                         //this prevents you going out of bounds
                     }
                 }
+            }
             return array;
         }
 
         public bool MatchFoundIsGameOver()
-        { return ((numberOfCardsLeft -= 2) < 1); }
+        {
+            numberOfCardsLeft -= 2;
+            return (numberOfCardsLeft < 1);
+        }
 
         public int getValue(int x, int y)
         { return internalPile[x, y]; }
