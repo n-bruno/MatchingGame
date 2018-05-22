@@ -46,13 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="arrayRNG.cs" />
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="VirtualPile.cs" />
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,7 +62,7 @@
     <Compile Include="PlayerList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="virtualPile.cs" />
+    <Compile Include="Winner.cs" />
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,17 +95,64 @@
   <ItemGroup>
     <None Include="Resources\pexels-photo-26750-large.jpg" />
     <None Include="Resources\18106282-poker-table.jpg" />
+    <None Include="Resources\backofcard.bmp" />
     <None Include="Resources\cardbackred.png" />
     <None Include="Resources\card1.png" />
     <None Include="Resources\card2.png" />
     <None Include="Resources\card3.png" />
     <None Include="Resources\card4.png" />
-    <Content Include="Resources\card5.png" />
-    <Content Include="Resources\card6.png" />
-    <Content Include="Resources\card7.png" />
-    <Content Include="Resources\card8.png" />
-    <Content Include="Resources\card9.png" />
-    <Content Include="Resources\cardx.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\13.png" />
+    <None Include="Resources\14.png" />
+    <None Include="Resources\15.png" />
+    <None Include="Resources\16.png" />
+    <None Include="Resources\17.png" />
+    <None Include="Resources\18.png" />
+    <None Include="Resources\19.png" />
+    <None Include="Resources\20.png" />
+    <None Include="Resources\21.png" />
+    <None Include="Resources\22.png" />
+    <None Include="Resources\23.png" />
+    <None Include="Resources\24.png" />
+    <None Include="Resources\25.png" />
+    <None Include="Resources\26.png" />
+    <None Include="Resources\27.png" />
+    <None Include="Resources\28.png" />
+    <None Include="Resources\29.png" />
+    <None Include="Resources\30.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\32.png" />
+    <None Include="Resources\33.png" />
+    <None Include="Resources\34.png" />
+    <None Include="Resources\35.png" />
+    <None Include="Resources\36.png" />
+    <None Include="Resources\37.png" />
+    <None Include="Resources\38.png" />
+    <None Include="Resources\39.png" />
+    <None Include="Resources\40.png" />
+    <None Include="Resources\41.png" />
+    <None Include="Resources\42.png" />
+    <None Include="Resources\43.png" />
+    <None Include="Resources\44.png" />
+    <None Include="Resources\45.png" />
+    <None Include="Resources\46.png" />
+    <None Include="Resources\47.png" />
+    <None Include="Resources\48.png" />
+    <None Include="Resources\49.png" />
+    <None Include="Resources\50.png" />
     <Content Include="Resources\Music.mp3" />
   </ItemGroup>
   <ItemGroup>

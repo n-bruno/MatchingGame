@@ -28,100 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_scores = new System.Windows.Forms.Button();
-            this.label_currentPlayer = new System.Windows.Forms.Label();
-            this.label_player = new System.Windows.Forms.Label();
-            this.label_score2 = new System.Windows.Forms.Label();
-            this.label_score = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.label_current_players = new System.Windows.Forms.Label();
+            this.button_create_cards = new System.Windows.Forms.Button();
+            this.label_all_scores = new System.Windows.Forms.Label();
+            this.label_all_score_display = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.label_author = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button_scores
+            // label_current_players
             // 
-            this.button_scores.Location = new System.Drawing.Point(197, 12);
-            this.button_scores.Name = "button_scores";
-            this.button_scores.Size = new System.Drawing.Size(75, 40);
-            this.button_scores.TabIndex = 0;
-            this.button_scores.Text = "Get all scores";
-            this.button_scores.UseVisualStyleBackColor = true;
-            this.button_scores.Click += new System.EventHandler(this.button_scores_Click);
+            this.label_current_players.AutoSize = true;
+            this.label_current_players.BackColor = System.Drawing.Color.Transparent;
+            this.label_current_players.ForeColor = System.Drawing.Color.Red;
+            this.label_current_players.Location = new System.Drawing.Point(12, 22);
+            this.label_current_players.Name = "label_current_players";
+            this.label_current_players.Size = new System.Drawing.Size(103, 13);
+            this.label_current_players.TabIndex = 2;
+            this.label_current_players.Text = "if you\'re reading this,";
+            this.label_current_players.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_currentPlayer
+            // button_create_cards
             // 
-            this.label_currentPlayer.AutoSize = true;
-            this.label_currentPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.label_currentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_currentPlayer.ForeColor = System.Drawing.Color.White;
-            this.label_currentPlayer.Location = new System.Drawing.Point(12, 12);
-            this.label_currentPlayer.Name = "label_currentPlayer";
-            this.label_currentPlayer.Size = new System.Drawing.Size(90, 13);
-            this.label_currentPlayer.TabIndex = 1;
-            this.label_currentPlayer.Text = "Current player:";
+            this.button_create_cards.Location = new System.Drawing.Point(154, 149);
+            this.button_create_cards.Name = "button_create_cards";
+            this.button_create_cards.Size = new System.Drawing.Size(75, 40);
+            this.button_create_cards.TabIndex = 5;
+            this.button_create_cards.Text = "Create cards";
+            this.button_create_cards.UseVisualStyleBackColor = true;
+            this.button_create_cards.Click += new System.EventHandler(this.button_create_cards_Click);
             // 
-            // label_player
+            // label_all_scores
             // 
-            this.label_player.AutoSize = true;
-            this.label_player.BackColor = System.Drawing.Color.Transparent;
-            this.label_player.ForeColor = System.Drawing.Color.White;
-            this.label_player.Location = new System.Drawing.Point(12, 26);
-            this.label_player.Name = "label_player";
-            this.label_player.Size = new System.Drawing.Size(103, 13);
-            this.label_player.TabIndex = 2;
-            this.label_player.Text = "if you\'re reading this,";
-            this.label_player.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_all_scores.AutoSize = true;
+            this.label_all_scores.BackColor = System.Drawing.Color.Transparent;
+            this.label_all_scores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_all_scores.ForeColor = System.Drawing.Color.White;
+            this.label_all_scores.Location = new System.Drawing.Point(12, 9);
+            this.label_all_scores.Name = "label_all_scores";
+            this.label_all_scores.Size = new System.Drawing.Size(68, 13);
+            this.label_all_scores.TabIndex = 6;
+            this.label_all_scores.Text = "All Scores:";
             // 
-            // label_score2
+            // label_all_score_display
             // 
-            this.label_score2.AutoSize = true;
-            this.label_score2.BackColor = System.Drawing.Color.Transparent;
-            this.label_score2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_score2.ForeColor = System.Drawing.Color.White;
-            this.label_score2.Location = new System.Drawing.Point(125, 12);
-            this.label_score2.Name = "label_score2";
-            this.label_score2.Size = new System.Drawing.Size(44, 13);
-            this.label_score2.TabIndex = 3;
-            this.label_score2.Text = "Score:";
+            this.label_all_score_display.AutoSize = true;
+            this.label_all_score_display.BackColor = System.Drawing.Color.Transparent;
+            this.label_all_score_display.ForeColor = System.Drawing.Color.White;
+            this.label_all_score_display.Location = new System.Drawing.Point(12, 35);
+            this.label_all_score_display.Name = "label_all_score_display";
+            this.label_all_score_display.Size = new System.Drawing.Size(43, 13);
+            this.label_all_score_display.TabIndex = 7;
+            this.label_all_score_display.Text = "BEARS";
+            this.label_all_score_display.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_score
+            // contextMenuStrip1
             // 
-            this.label_score.AutoSize = true;
-            this.label_score.BackColor = System.Drawing.Color.Transparent;
-            this.label_score.ForeColor = System.Drawing.Color.White;
-            this.label_score.Location = new System.Drawing.Point(125, 25);
-            this.label_score.Name = "label_score";
-            this.label_score.Size = new System.Drawing.Size(47, 13);
-            this.label_score.TabIndex = 4;
-            this.label_score.Text = "get a life";
-            this.label_score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label_author
+            // 
+            this.label_author.AutoSize = true;
+            this.label_author.BackColor = System.Drawing.Color.Transparent;
+            this.label_author.ForeColor = System.Drawing.Color.White;
+            this.label_author.Location = new System.Drawing.Point(151, 9);
+            this.label_author.Name = "label_author";
+            this.label_author.Size = new System.Drawing.Size(135, 13);
+            this.label_author.TabIndex = 13;
+            this.label_author.Text = "Nick Bruno and Chris Kane";
             // 
             // Form_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.greenPoker;
             this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.label_score);
-            this.Controls.Add(this.label_score2);
-            this.Controls.Add(this.label_player);
-            this.Controls.Add(this.label_currentPlayer);
-            this.Controls.Add(this.button_scores);
+            this.Controls.Add(this.label_author);
+            this.Controls.Add(this.label_all_score_display);
+            this.Controls.Add(this.label_all_scores);
+            this.Controls.Add(this.button_create_cards);
+            this.Controls.Add(this.label_current_players);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_Game";
+            this.Opacity = 0.95D;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
-            this.Load += new System.EventHandler(this.Game_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Game_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_scores;
-        private System.Windows.Forms.Label label_currentPlayer;
-        private System.Windows.Forms.Label label_player;
-        private System.Windows.Forms.Label label_score2;
-        private System.Windows.Forms.Label label_score;
+        private System.Windows.Forms.Label label_current_players;
+        private System.Windows.Forms.Button button_create_cards;
+        private System.Windows.Forms.Label label_all_scores;
+        private System.Windows.Forms.Label label_all_score_display;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.Label label_author;
     }
 }
