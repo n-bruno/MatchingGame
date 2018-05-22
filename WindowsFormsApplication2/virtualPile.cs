@@ -1,10 +1,4 @@
-﻿/**
- * Class :          virtualPile
- * Author :         Chris Kane and Nick Bruno
- * Description :    A virtual representation of the card pile
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,23 +8,23 @@ namespace matchingGame
 {
     class virtualPile
     {
-        private int[,] myPile;
-        /*
-         * This array stores integers that are associated with
-         * pictures.
-         */
+        private int[,] array;
 
         public virtualPile(int width, int height, int[] RNG)
         {
-            /*
-             * Store every element from the array RNG into 
-             * myPile.
-             */
+            array = new int[width, height];
 
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    array[i, j] = RNG[i + (j * height)];
+                }
+            }
         }
 
         public int getValue(int x, int y) {
-            //return the array
+            return array[x, y];
         }
     }
 }

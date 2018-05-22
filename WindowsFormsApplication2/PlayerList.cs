@@ -1,29 +1,5 @@
-﻿/**
- * Class :          PlayerList
- * Author :         Chris Kane and Nick Bruno
- * Description :    A list that contains objects of type player
- */
-
-/**
-* Class :          Player
-* Author :         Chris Kane and Nick Bruno
-* Description :    An object that contain attributes for the players
-*/
-
-/**
-* Class :          LinkedList
-* Author :         Chris Kane and Nick Bruno
-* Description :    A simple linked list class
-*/
-
-/**
-* Class :          Node
-* Author :         Chris Kane and Nick Bruno
-* Description :    A class for a node in the linked list class
-*/
-
-
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace matchingGame
 {
@@ -52,13 +28,12 @@ namespace matchingGame
 
             int i = 0;
 
-            //access all elements in the list
             while (i < iterator.getCount())
             {
                 stringy = stringy + iterator.getCurrent().getPlayerName() +
                     " has " + iterator.getCurrent().getPlayerScore() + " points.\n";
                 i++;
-                iterator.next(); //get the next person
+                iterator.next();
             }
             return stringy;
         }

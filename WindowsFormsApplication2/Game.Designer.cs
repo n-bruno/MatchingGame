@@ -110,6 +110,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -20,7 +23,6 @@ namespace matchingGame
 
         public Form_Game(int x, int y, String[] players)
         {
-            //add players
             playerList = new PlayerList();
 
             int i = 0;
@@ -32,11 +34,10 @@ namespace matchingGame
             this.x = x;
             this.y = y;
 
-            arrayRNG nn = new arrayRNG(); //create an RNG object
+            arrayRNG nn = new arrayRNG();
             int[] RNG = nn.create(x, y);
 
-            //create a pile object with the contents of RNG
-            pile = new virtualPile(x, y, RNG); 
+            pile = new virtualPile(x, y, RNG);
 
             InitializeComponent();
             createCard();
@@ -45,10 +46,14 @@ namespace matchingGame
             label_score.Text = playerList.getPlayerScore().ToString();
         }
 
+        private void Game_Load(object sender, EventArgs e)
+        {
+            
+            
+        }
+
         private void createCard()
         {
-            //dynamically creates buttons
-
             int cardDimension = x * y;
             int cardButtonWidth = 40; //WindowsFormsApplication2.Properties.Resources.cardbackred.Width;
             int cardButtonHeight = 55;//WindowsFormsApplication2.Properties.Resources.cardbackred.Height;
@@ -86,39 +91,75 @@ namespace matchingGame
             }
         }
 
-        private void Resize_Window(
-            int widthOfcard,
-            int heightOfcard,
-            int cardXDimension,
-            int cardYDimension,
-            int cardSpacing,
-            int xOfcard,
-            int yOfCard)
-        {
-            //insert code here
-        }
-
         private void  Button_Click(object sender, EventArgs e)
         {
                 int x = Convert.ToInt32(((Button)sender).Name.Substring(3, 1));
                 int y = Convert.ToInt32(((Button)sender).Name.Substring(4, 1));
 
-            /*
-             * Modify a button's background image
-             * newButton[row, col].BackgroundImage = WindowsFormsApplication2.Properties.Resources.cardbackred;
-             * 
-             * 
-             * Variables that will help you:
-             * 
-             * private int int_firstCard;
-             * private Button obj_firstCard;
-             * 
-             * private int int_secondCard;
-             * private Button obj_secondCard;
-             * 
-             * These variables will store attributes of the first
-             * and second cards. Use these to compares
-             */
+                int cardValue = pile.getValue(x, y);
+
+                if (cardValue == 1)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card1;
+                else if (cardValue == 2)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card2;
+                else if (cardValue == 3)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card3;
+                else if (cardValue == 4)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card4;
+                else if (cardValue == 5)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card5;
+                else if (cardValue == 6)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card6;
+                else if (cardValue == 7)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card7;
+                else if (cardValue == 8)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card8;
+                else if (cardValue == 9)
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.card9;
+                else
+                    ((Button)sender).BackgroundImage = WindowsFormsApplication2.Properties.Resources.cardx;
+
+                if (obj_firstCard == null)
+                {
+                    obj_firstCard = (Button)sender;
+                    int_firstCard = pile.getValue(x, y);
+                }
+                else
+                {
+                    obj_secondCard = (Button)sender;
+                    int_secondCard = pile.getValue(x, y);
+
+                    if (int_secondCard == int_firstCard)
+                    {
+                        MessageBox.Show("Match", "Match");
+
+                        obj_firstCard = null;
+                        int_firstCard = 0;
+
+                        obj_secondCard = null;
+                        int_secondCard = 0;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Match", "No Match");
+
+                        obj_firstCard.BackgroundImage = WindowsFormsApplication2.Properties.Resources.cardbackred;
+
+                        obj_secondCard.BackgroundImage = WindowsFormsApplication2.Properties.Resources.cardbackred;
+
+                        obj_firstCard = null;
+                        int_firstCard = 0;
+
+                        obj_secondCard = null;
+                        int_secondCard = 0;
+                    }
+
+            }
+
+
+
+
         }
 
 

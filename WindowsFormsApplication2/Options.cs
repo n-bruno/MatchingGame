@@ -18,19 +18,16 @@ namespace matchingGame
             InitializeComponent();
         }
 
-        //limit characters to only letters and spaces
         private void textBox_player_names_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar);
         }
 
-        //limit characters to only numbers
         private void textBox_cardx_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        //limit characters to only numbers
         private void textBox_cardy_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -45,10 +42,11 @@ namespace matchingGame
                 {
                     int x = int.Parse(textBox_cardx.Text);
                     int y = int.Parse(textBox_cardx.Text);
-                    
+
+
                     if (x > 2 && y > 2)
                     {
-                        if (x % 2 == 0 || y % 2 == 0) //must have at least one even number
+                        if (x % 2 == 0 || y % 2 == 0)
                         {
                             textBox_player_names.Text = textBox_player_names.Text.Replace("  ", " ");
 
@@ -134,7 +132,6 @@ namespace matchingGame
         }
     }
 
-    //the music player
     class player
     {
         WindowsMediaPlayer song = new WindowsMediaPlayer();
